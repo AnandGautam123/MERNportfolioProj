@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 function downloadResume() {
   const resumeLink =
-    "https://drive.google.com/file/d/1JbFustNXEf4jG6u9vDH0ZF0p4rUKDQJJ/view?usp=sharing";
+    "https://drive.google.com/file/d/1kKr2Hg7H8zYjfz0ot3l_MGKhtsycbxsS/view?usp=drivesdk";
   window.open(resumeLink);
 }
 
