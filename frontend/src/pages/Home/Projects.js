@@ -1,3 +1,4 @@
+// Projects.js
 import React from "react";
 import SectionTitle from "../../components/SectionTitle";
 import { useSelector } from "react-redux";
@@ -12,7 +13,7 @@ const Projects = () => {
       <SectionTitle title="Projects" />
       <div className="flex py-10 gap-20 sm:flex-col">
         <div className="flex flex-col gap-10 border-l-2 border-[#50c057] sm:w-full">
-          {projects.map((project, index) => (
+          {projects && projects.map((project, index) => (
             <div
               onClick={() => {
                 setSelectedItemsIndex(index);
@@ -34,7 +35,7 @@ const Projects = () => {
         </div>
 
         <div className="flex items-center justify-center gap-10 sm:flex-col">
-          {projects.length > 0 && (
+          {projects && projects.length > 0 && (
             <img
               src={projects[selectedItemsIndex].image}
               alt="loading.."
@@ -42,14 +43,16 @@ const Projects = () => {
             />
           )}
 
-          <div className="flex flex-col gap-5">
-            <h1 className="text-secondary text-2xl">
-              {projects[selectedItemsIndex].title}
-            </h1>
-            <p className="text-white">
-              {projects[selectedItemsIndex].decription}
-            </p>
-          </div>
+          {projects && projects.length > 0 && (
+            <div className="flex flex-col gap-5">
+              <h1 className="text-secondary text-2xl">
+                {projects[selectedItemsIndex].title}
+              </h1>
+              <p className="text-white">
+                {projects[selectedItemsIndex].decription}
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
